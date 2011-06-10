@@ -1,0 +1,8 @@
+How to set up:
+
+Make a copy of PageCommentInterface.ss in your own theme / template folder.
+
+Replace 
+"<% control Comments %>"
+with
+"<% control NestedComments %>"

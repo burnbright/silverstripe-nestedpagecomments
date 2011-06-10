@@ -1,6 +1,6 @@
 <?php
 
-class NestedPageCommentDecorator extends DataObjectDecorator{
+class EatPageCommentDecorator extends DataObjectDecorator{
 	
 	function extraStatics(){
 		return array(
@@ -28,15 +28,9 @@ class NestedPageCommentDecorator extends DataObjectDecorator{
 		return ($this->owner->AuthorID && $this->owner->Author()->isAdmin());		
 	}
 	
-	function ReplyComments(){
-		
-		return $this->owner->renderWith('PageCommentChildren');
+	function RenderChildren(){
+		return $this->renderWith('PageCommentChildren');
 	}
-	
-
-	//onBeforeWrite
-	//delete all the children, if there are any
-
 	
 }
  
