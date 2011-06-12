@@ -29,7 +29,6 @@ class NestedPageCommentDecorator extends DataObjectDecorator{
 	}
 	
 	function ReplyComments(){
-		
 		return $this->owner->renderWith('PageCommentChildren');
 	}
 	
