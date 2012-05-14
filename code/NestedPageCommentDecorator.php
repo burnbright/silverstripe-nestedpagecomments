@@ -32,11 +32,13 @@ class NestedPageCommentDecorator extends DataObjectDecorator{
 		return $this->owner->renderWith('PageCommentChildren');
 	}
 	
+	function NestedReplies(){
+		$spamfilter = isset($_GET['showspam']) ? '' : "\"IsSpam\" = 0";
+		$unmoderatedfilter = Permission::check('CMS_ACCESS_CommentAdmin') ? '' : "AND \"NeedsModeration\" = 0";
+		$notreplyfilter = " AND ReplyToID = 0";
+		return $this->owner->Children("$spamfilter $unmoderatedfilter");
+	}
 
 	//onBeforeWrite
 	//delete all the children, if there are any
-
-	
 }
- 
-?>

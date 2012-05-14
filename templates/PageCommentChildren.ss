@@ -1,6 +1,6 @@
-<% if Children %>
+<% if NestedReplies %>
 	<ul>
-		<% control Children %>
+		<% control NestedReplies %>
 			<li class="child comment pos-$Pos $FirstLast $EvenOdd<% if IsStaffComment %> staff<% end_if %>">
 				<% include PageCommentInterface_singlecomment %>
 			</li>
